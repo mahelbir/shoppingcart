@@ -54,6 +54,8 @@ namespace ShoppingCart
                 userCookie.Expires = DateTime.Now.AddDays(-1);
                 Response.Cookies.Add(userCookie);
             }
+            if (Session["selectedBooks"] != null)
+                Session.Remove("selectedBooks");
             Response.Redirect("Default.aspx");
         }
     }
